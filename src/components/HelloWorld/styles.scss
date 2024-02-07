@@ -1,0 +1,15 @@
+.helloworld-component {
+  align-items: center;
+  background-color: #1d1d1d;
+  color: #f1f1f1;
+  display: flex;
+  flex-direction: column;
+  font-size: 6rem;
+  gap: 1rem;
+  justify-content: center;
+  height: 100vh;
+
+  .logo {
+    height: 10rem;
+  }
+}

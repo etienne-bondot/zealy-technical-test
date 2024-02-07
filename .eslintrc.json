@@ -1,0 +1,78 @@
+{
+  "env": {
+    "browser": true,
+    "es2020": true,
+    "node": true
+  },
+  "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/errors",
+    "plugin:import/typescript",
+    "plugin:import/warnings",
+    "plugin:prettier/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:react/recommended"
+  ],
+  "ignorePatterns": ["/**/old_components/**/*.tsx"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true,
+      "module": true
+    },
+    "ecmaVersion": 11
+  },
+  "plugins": [
+    "@typescript-eslint",
+    "import",
+    "prettier",
+    "react",
+    "react-hooks",
+    "sort-destructure-keys",
+    "sort-keys-fix",
+    "standard",
+    "typescript-sort-keys"
+  ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "rules": {
+    "@typescript-eslint/consistent-type-imports": [
+      "error",
+      { "prefer": "type-imports" }
+    ],
+    "@typescript-eslint/explicit-module-boundary-types": ["error"],
+    "@typescript-eslint/no-explicit-any": ["error"],
+    "import/no-unresolved": ["error", { "ignore": ["^~/", "^assets/"] }],
+    "import/order": [
+      "error",
+      {
+        "alphabetize": { "order": "asc", "caseInsensitive": true },
+        "groups": [
+          "builtin",
+          "external",
+          "type",
+          "internal",
+          "sibling",
+          "parent"
+        ],
+        "newlines-between": "always"
+      }
+    ],
+    "react-hooks/exhaustive-deps": ["error"],
+    "react/jsx-sort-props": ["error"],
+    "react/react-in-jsx-scope": "off",
+    "sort-destructure-keys/sort-destructure-keys": [
+      "error",
+      { "caseSensitive": false }
+    ],
+    "sort-keys": ["error"],
+    "sort-keys-fix/sort-keys-fix": "warn",
+    "typescript-sort-keys/interface": "error",
+    "typescript-sort-keys/string-enum": "error"
+  }
+}
+
+
