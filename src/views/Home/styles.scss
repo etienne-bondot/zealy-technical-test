@@ -1,13 +1,9 @@
-.loader-component {
+.home-view {
   align-items: center;
   background-color: #ffffff;
-  color: #1d1d1d;
   display: flex;
-  height: 100%;
-  font-size: 12rem;
+  flex-direction: column;
+  height: 100dvh;
   justify-content: center;
-  left: 0;
-  position: absolute;
-  top: 0;
   width: 100%;
 }

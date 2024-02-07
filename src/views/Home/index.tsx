@@ -1,19 +1,19 @@
 import type { ReactElement } from 'react'
 
-import { getRandomValue } from '~/api/fake-request'
+import ZealySVG from '~/assets/zealy.svg'
+import ClickableBlock from '~/components/ClickableBlock'
 import HelloWorld from '~/components/HelloWorld'
-import useRequest from '~/hooks/useRequest'
 
 import './styles.scss'
 
 const Home = (): ReactElement => {
-  const { isLoading } = useRequest<number, number>(getRandomValue, 3000)
-
   return (
-    <>
-      <HelloWorld />
-      {isLoading && <span className="loader-component">Loading...</span>}
-    </>
+    <div className="home-view">
+      <img src={ZealySVG} />
+      <ClickableBlock>
+        <HelloWorld />
+      </ClickableBlock>
+    </div>
   )
 }
 

@@ -29,15 +29,37 @@ const commonConf = {
         },
       },
       {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
+      },
+      {
         test: /\.s[ac]ss$/i,
         use: [
-          process.env.NODE_ENV !== 'production' ? 'style-loader' : MiniCssExtractPlugin.loader,
+          // Creates `style` nodes from JS strings
+          'style-loader',
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              esModule: false,
+            },
+          },
+          // Translates CSS into CommonJS
           'css-loader',
+          // Resolve assets url
+          {
+            loader: 'resolve-url-loader',
+            options: {
+              root: srcDir,
+            },
+          },
+          // Compiles Sass to CSS
           {
             loader: 'sass-loader',
             options: {
-              // Prefer `dart-sass`
               implementation: require('sass'),
+              sassOptions: {
+                includePaths: [path.join(srcDir, 'css')],
+              },
               sourceMap: true,
             },
           },
@@ -50,6 +72,10 @@ const commonConf = {
     path: path.join(outputDir),
   },
   plugins: [
+    new MiniCssExtractPlugin({
+      chunkFilename: '[id].css',
+      filename: 'static/css/[name].css',
+    }),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: path.join(publicDir, 'index.html'),

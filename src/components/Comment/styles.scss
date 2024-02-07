@@ -1,0 +1,62 @@
+@use 'colors';
+@use 'fonts';
+
+.comment-component {
+  width: 100%;
+
+  .reset-button-style {
+    background: inherit;
+    border: none;
+    outline: none;
+  }
+
+  .comment-infos {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+
+    &__profile {
+      margin-right: 1rem;
+    }
+
+    .relative-date {
+      color: #{colors.$color-neutral-light};
+      font-size: 1.4rem;
+      text-align: right;
+      white-space: nowrap;
+    }
+  }
+
+  .comment-content {
+    align-items: flex-start;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    font-size: #{fonts.$font-size-s};
+    line-height: 2.1rem; // if change, reflect it in index.tsx
+    margin-left: 5.5rem;
+
+    .comment-value {
+      overflow-wrap: break-word;
+      width: 100%;
+
+      &--clamped {
+        @include fonts.clamped;
+        -webkit-line-clamp: 4;
+        line-clamp: 4;
+      }
+
+      &--unclamped {
+        @include fonts.unclamped;
+      }
+    }
+
+    .more-action {
+      color: #{colors.$color-primary-base};
+      cursor: pointer;
+      font-weight: #{fonts.$font-weight-xl};
+      margin-bottom: 0.6rem;
+      max-height: 1.3rem;
+    }
+  }
+}

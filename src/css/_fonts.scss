@@ -1,0 +1,41 @@
+/* Fonts */
+
+//Font-weight
+$font-weight-xs: 300;
+$font-weight-s: 400;
+$font-weight-md: 500;
+$font-weight-lg: 600;
+$font-weight-xl: 700;
+$font-weight-xxl: 800;
+
+//Font-size
+$font-size-xs: 1.2rem;
+$font-size-s: 1.5rem;
+$font-size-md: 1.6rem;
+$font-size-lg: 2rem;
+$font-size-xl: 2.6rem;
+$font-size-xxl: 3rem;
+$font-size-3xl: 3.2rem;
+$font-size-4xl: 5rem;
+$font-size-5xl: 7rem;
+$font-oversize: 9rem;
+
+//Mixins
+
+@mixin clamped {
+  -webkit-box-orient: vertical;
+  display: -webkit-inline-box;
+  overflow: hidden;
+}
+
+@mixin ellipsed {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin unclamped {
+  -webkit-line-clamp: unset;
+  line-clamp: unset;
+  overflow: auto;
+}

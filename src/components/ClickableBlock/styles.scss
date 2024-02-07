@@ -1,0 +1,19 @@
+.clickable-block-component {
+  position: relative;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &--has-comments {
+    border: 1px solid red;
+  }
+}
+
+.ReactModal__Content {
+  height: fit-content;
+  left: 101% !important;
+  max-height: 200px;
+  padding: 10px !important;
+  width: fit-content;
+}
